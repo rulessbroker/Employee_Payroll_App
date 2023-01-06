@@ -80,6 +80,3 @@ function save(){
     );
     alert('form submitted \n'+employeePayrollData);
 }
-
-
-

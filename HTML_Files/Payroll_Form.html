@@ -24,7 +24,7 @@
                 </div>
                 </header>
                 <div class="form-content">
-                <form class="form" action="#" onsubmit="save();return false">
+                <form class="form" action="#" onsubmit="save(event);return false">
                     <div class="form-head">Employee Payroll form</div>
                     <div class="row-content">
                     <label class="label-text" for="name">Name</label>
@@ -36,6 +36,7 @@
                         placeholder="your name.."
                         required
                     />
+                    <div class="text-error" for="name"></div>
                     </div>
                     <div class="row—content">
                     <label class="label text" for="profile">Profile image</label>
@@ -243,13 +244,5 @@
                     </div>
                 </form>
                 </div>
-                
-                <script>
-                    const salary = document.querySelector('#salary');
-                    const output = document.querySelector('.salary-output');
-                    salary.addEventListener('input',function(){
-                        output.textContent = salary.value;
-                    });
-                </script>
             </body>
             </html>
