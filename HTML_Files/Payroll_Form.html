@@ -9,6 +9,7 @@
                 rel="stylesheet"
                 />
                 <link rel="stylesheet" href="../CSS_Files/Payroll_Form.css" />
+                <script src="../JS_Files/Payroll_Form.js"></script>
                 <title>Employee payroll from</title>
             </head>
 
@@ -234,7 +235,7 @@
                         <textarea id="notes" class="input" name="Notes" placeholder="" style="height:100px"></textarea>
                     </div>
                     <div class="buttonParent">
-                        <a href="./Payroll_Form.html" class="resetButton button cancelButton">Cancel</a>
+                        <a href="./Payroll_Form.html" class="button cancelButton">Cancel</a>
                         <div class="submit—reset">
                         <button type="submit" class="button submitButton" id="submitButton">Submit</button>
                         <button type="reset" class="button resetButton">Reset</button>
@@ -242,5 +243,13 @@
                     </div>
                 </form>
                 </div>
+
+                <script>
+                    const salary = document.querySelector('#salary');
+const output = document.querySelector('.salary-output');
+salary.addEventListener('input',function(){
+    output.textContent = salary.value;
+});
+                </script>
             </body>
             </html>
