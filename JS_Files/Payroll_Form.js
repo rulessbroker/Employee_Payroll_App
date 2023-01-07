@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const textError = document.querySelector('.text-error')
     name.addEventListener('input', function () {
         if (name.value.length == 0) {
-            textError.textContent = '';
+            textError.textContent = " ";
             return;
         }
 
@@ -22,7 +22,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const salary = document.querySelector('#salary')
     const output = document.querySelector('.salary-output')
     output.textContent = salary.value
-    salary.addEventListener('input', getSalary)
+    salary.addEventListener('input', getSalary())
 
 });
 
@@ -40,7 +40,7 @@ const createAndUpdateStorage = function (employeePayrollData) {
     if (employeePayrollList != undefined) {
         employeePayrollList = employeePayrollList.push(employeePayrollData)
     } else {
-        employeePayrollList = [employeePayrollData] //need to ask in doubt session
+        employeePayrollList = [employeePayrollData] 
     }
     alert(employeePayrollList.toString())
     localStorage.setItem("EmployeePayrollList", JSON.stringify(employeePayrollList))
@@ -49,7 +49,7 @@ const createAndUpdateStorage = function (employeePayrollData) {
 const createEmployeePayroll = () => {
     let employeePayrollData = new EmployeePayrollData(); //creation of object
     try {
-        employeePayrollData.name = getInputValueById('#name');
+        employeePayrollData.name = getInputValueById("#name");
     } catch (e) {
         setTextValue('.text-error', e)
         throw e;
@@ -83,7 +83,7 @@ const resetForm = () => {
     unsetSelectedValues('[name=profile]');
     unsetSelectedValues('[name=gender]');
     unsetSelectedValues('[name=department]');
-    setValue('#salary',' ');
+    setValue('#salary','40000');
     setValue('#notes',' ');
     setValue('#day','1');
     setValue('#month','January');
