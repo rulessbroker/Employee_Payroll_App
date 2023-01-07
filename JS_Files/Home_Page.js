@@ -87,3 +87,26 @@ const createEmployeePayrollJSON = () => {
     }
     return deptHtml;
   }
+
+  const remove = (node) => {
+    let empPayrollData = empPayrollList.find(empData => empData._id == node.id );
+    if (!empPayrollData) {
+      alert("data not found");
+      return;
+    }
+    const index = empPayrollList.map(empData => empData._id).indexOf(empPayrollData._id);
+    empPayrollList.splice(index, 1);
+    localStorage.setItem("employeePayrollDataList", JSON.stringify(empPayrollList));
+    document.querySelector(".emp-count").textContent = empPayrollList.length;
+    createInnerHtml();
+  }
+  
+  const update = (node) =>{
+    let empPayrollData = empPayrollList.find(empData => empData._id == node.id );
+    if (!empPayrollData) {
+      alert("data not found");
+      return;
+    }
+    localStorage.setItem("editEmp",JSON.stringify(empPayrollData))
+    window.location.replace("../HTML_Files/Payroll_Form.html");
+  }
