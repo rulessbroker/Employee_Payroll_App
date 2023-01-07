@@ -50,3 +50,40 @@ const createInnerHtml=() => {
   }
   document.querySelector('#table-display').innerHTML = innerHtml;
 }
+
+const createEmployeePayrollJSON = () => {
+    let employeePayrollListLocal = [
+      {
+        _name: 'Sagar',
+        _gender: 'male',
+        _department: ['HR', 'Finance'],
+        _salary: '500000',
+        _startDate: 2022-01-01,
+        _note: '',
+        _id: new Date().getTime(),
+        _profilePic: '../assets/profile-images/Ellipse -2.png'
+      },{
+        _name: 'Ranjit',
+        _gender: 'male',
+        _department: ['HR', 'Finance'],
+        _salary: '400000',
+        _startDate: 2022-05-02,
+        _note: '',
+        _id: new Date().getTime(),
+        _profilePic: '../assets/profile-images/Ellipse -3.png'
+      }
+    ]
+    return employeePayrollListLocal;
+  };
+  
+  const getDeptHtml = (deptList) => {
+    if (deptList == undefined) {
+      console.log("deptList is empty");
+      return;    
+    }
+    let deptHtml = '';
+    for (const dept of deptList) {
+      deptHtml = `${deptHtml} <div class="dept-label">${dept}</div>`;
+    }
+    return deptHtml;
+  }
